@@ -6,6 +6,9 @@ void main(List<String> args) {
     return;
   }
 
-  final message = OjiChat.hello(name: args[0]);
-  print(message);
+  final ojiChat = openOjiChat();
+  final ptr = stringToPointer(args[0]);
+  final message = ojiChat.getMessage(ptr);
+
+  print(pointerToString(message));
 }
