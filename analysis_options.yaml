@@ -1,8 +1,13 @@
-include: package:pedantic/analysis_options.1.9.0.yaml
+include: package:lints/recommended.yaml
 
 analyzer:
   strong-mode:
     implicit-casts: false
     implicit-dynamic: false
+  errors:
+    missing_required_param: error
+    missing_return: error
+    todo: ignore
+    unnecessary_null_comparison: warning
   exclude:
     - "bin/library/generated_bindings.dart"
