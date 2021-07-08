@@ -13,7 +13,7 @@ OjiChat openOjiChat() {
 
 String _libPath(String filename) {
   final scriptPath = path.fromUri(Platform.script.path);
-  return path.join(path.dirname('$scriptPath'), 'library', filename);
+  return path.join(path.dirname(scriptPath), 'library', filename);
 }
 
 String get _libExt {
@@ -31,9 +31,9 @@ String get _libExt {
 }
 
 Pointer<Int8> stringToPointer(String string) {
-  return Utf8.toUtf8(string).cast<Int8>();
+  return string.toNativeUtf8().cast<Int8>();
 }
 
 String pointerToString(Pointer<Int8> pointer) {
-  return Utf8.fromUtf8(pointer.cast<Utf8>());
+  return pointer.cast<Utf8>().toDartString();
 }

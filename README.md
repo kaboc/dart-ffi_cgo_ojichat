@@ -17,7 +17,7 @@ ffigen の [Setup](https://pub.dev/packages/ffigen#setup) の項目に従って�
 4. `main.dart` にて `generated_bindings.dart` を使用する（記述済み）
 
 ```shell script
-$ dart pub run ffigen
+$ dart run ffigen
 ```
 
 - `headers` 内には Windows の環境で生成されたヘッダファイルが予め置いてあるが、自身で `go build`
